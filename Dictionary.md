@@ -1,0 +1,13 @@
+- **AI** - Artificial Intelligence
+- **CDC** - Change Data Capture
+- **DAG** - Directed Acyclic Graph
+- **ETL** - Extract Load Transform
+- **FTI** - Feature-Training-Inference (Architecture)
+- **LLM** - Large Language Model
+- **MVP** - Minimum Viable Product
+- **NLP** - Natural Language processing
+- **ORM** - Object-Relational Mapping
+- **OVM** - Object-Vector Mapping
+- **RAG** - Retrieval-Augmented Generation
+- **RLHF** - Reinforcement Learning from Human Feedback
+- **ROI** - Return of Investment
