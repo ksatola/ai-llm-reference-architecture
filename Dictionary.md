@@ -11,3 +11,4 @@
 - **RAG** - Retrieval-Augmented Generation
 - **RLHF** - Reinforcement Learning from Human Feedback
 - **ROI** - Return of Investment
+- **SFT** - Supervised Fine-Tuning
