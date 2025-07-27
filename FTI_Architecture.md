@@ -3,6 +3,8 @@ FTI Architecture
 
 System View
 
+![alt text](/images/AI_LLM_Ref_Arch_System.png)
+
 Design objectives
 - Differents subsystems (pipelines) are independent from others and can:
   - Leverage different architectures and compute components (CPU, GPU, TPU), 
@@ -52,6 +54,6 @@ Following the [FTI pattern](https://medium.com/decodingml/building-ml-systems-th
 - Model training
 - Inference (model serving)
 
-![alt text](/images/AI_LLM_Ref_Arch_System.png)
+
 
 [More info](https://www.hopsworks.ai/post/mlops-to-ml-systems-with-fti-pipelines)
