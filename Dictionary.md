@@ -1,6 +1,7 @@
 - **AI** - Artificial Intelligence
 - **CDC** - Change Data Capture
 - **DAG** - Directed Acyclic Graph
+- **DPO** - Direct Preference Optimization
 - **ETL** - Extract Load Transform
 - **FTI** - Feature-Training-Inference (Architecture)
 - **LLM** - Large Language Model
