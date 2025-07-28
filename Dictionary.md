@@ -1,5 +1,6 @@
 - **AI** - Artificial Intelligence
 - **CDC** - Change Data Capture
+- **CLI** - Command Line Interface
 - **DAG** - Directed Acyclic Graph
 - **DPO** - Direct Preference Optimization
 - **ETL** - Extract Load Transform
