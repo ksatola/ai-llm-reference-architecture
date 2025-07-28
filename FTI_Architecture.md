@@ -1,59 +1,66 @@
-FTI Architecture
+# FTI Architecture
 
 
-System View
+## System View
 
-![alt text](/images/AI_LLM_Ref_Arch_System.png)
-
-Design objectives
-- Differents subsystems (pipelines) are independent from others and can:
-  - Leverage different architectures and compute components (CPU, GPU, TPU), 
-  - Use different tech stacks (tools, services),
-  - Have separate dev team,
-  - Be developed, deployed, scaled separately (independently)
-- Interfaces between subsystems remain the same regardless their complexity
-- Data Collection Pipeline can:
-  - Get raw data from different sources
-  - Standardize data structure, transform data and store for further processing
-- Feature Pipeline can:
-  - Include data validation step...
-  - Be run on CPU-based machines
-  - Tools: Pandas, Spark, DBT...
-- Training Pipeline can:
-  - Include data evaluation step...
-  - Process data in batch mode rather than in near real-time
-  - Be run on GPU/TPU-based machines
-  - Tools: PyTorch, TensorFlow, Scikit-Learn
-- Inference (serving) Pipeline can:
-  - Process data in near real-time or batch mode
-  - Be run on GPU/TPU-based machines
-  - Tools: PyTorch, TensorFlow, Scikit-Learn
-- Feature Store can:
-  - Allow data versioning
-  - Help avoid training-serving skew
-  - Tools: Feast, Tecton, SageMaker FS, Databrics FS, Vertex AI FS...
-- Model Registry can: 
-  - Store versioned models along with their metadata
-  - Allow models tracking, monitoring and performance comparison
-  - Tools: MLflow, AIM, HuggingFace
-
-====
-
-TW architecture will be based on FTI pattern with the scope of:
-- Ingesting, cleaning, and validating fresh data
-- Training and inference setups
-- Compute and serve features in the right environment
-- Serve the model in a cost-effective way
-- Version, track, be able to reproduce, and share the datasets and models
-- Monitor your infrastructure and models
-- Deploy the model on a scalable infrastructure
-- Automate the deployments and training
-
-Following the [FTI pattern](https://medium.com/decodingml/building-ml-systems-the-right-way-using-the-fti-architecture-d9cc0cd29abf), any ML system can be divided into 3 pipelines:
-- Feature training 
-- Model training
-- Inference (model serving)
+![alt text](/images/ai_llm_system.png)
 
 
+### Design objectives
+Differents subsystems (pipelines) are independent from others and can:
+- Leverage different architectures (CPU, GPU, TPU).
+- Use different tech stacks (tools, services).
+- Have separate development team.
+- Be developed, deployed, and scaled separately (independently).
+- The data engineering team owns the Data Pipeline.
+- The ML engineering team owns the FTI Pipelines.
+- Interfaces between subsystems remain the same regardless of subsystems' internal complexity.
 
-[More info](https://www.hopsworks.ai/post/mlops-to-ml-systems-with-fti-pipelines)
+
+### Data Collection Pipeline (ETL)
+- Extract raw data from different sources into a staging area.
+- Link/align data from different sources to be used as a coherent data corpus.
+- Standardize data structure, transform data and store for further processing.
+- Tools: Snowflake, BigQuery, Mongo DB...
+
+
+### Feature Pipeline
+- Take raw data as input, processes it, and output the features and labels.
+- Have data validation, data preparation steps.
+- Tools: Pandas, Spark, DBT...
+  
+
+### Training Pipeline
+- In the initial stage of model development, the data science team owns this step.
+- Perform model evaluation and validation steps.
+- Process data in batch mode rather than in near real-time.
+- Tools: PyTorch, TensorFlow, Scikit-Learn...
+
+
+### Inference (serving) Pipeline
+- Take as input the features and labels from the feature store and the trained model from the model registry. With these two, make predictions in either batch or real-time mode.
+- Tools: PyTorch, TensorFlow, Scikit-Learn...
+
+
+### Feature Store
+- Store, version, track, and share features.
+- Keep the state of saved features.
+- Version data.
+- Help avoid training-serving skew.
+- Tools: Feast, Tecton, SageMaker FS, Databrics FS, Vertex AI FS...
+
+
+### Model Registry 
+- Centralized repository that manages ML models throughout their lifecycle.
+- Store models along with their metadata, version history, and performance metrics.
+- Serve as a single source of truth. 
+- Track, share, and document model versions.
+- Facilitate team collaboration. 
+- Fundamental element in the deployment process as it integrates with continuous integration and continuous deployment (CI/CD) pipelines.
+- Tools: MLflow, AIM, HuggingFace...
+
+
+## Additional Resources
+- [From MLOps to ML Systems with Feature/Training/Inference Pipelines](https://www.hopsworks.ai/post/mlops-to-ml-systems-with-fti-pipelines)
+- [Building ML Systems the Right Way Using the FTI Architecture](https://medium.com/decodingml/building-ml-systems-the-right-way-using-the-fti-architecture-d9cc0cd29abf)
+
