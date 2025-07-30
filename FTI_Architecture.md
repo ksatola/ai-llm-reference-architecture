@@ -7,7 +7,7 @@
 
 
 ### Design objectives
-Differents subsystems (pipelines) are independent from others and can:
+Different subsystems (pipelines) are independent from others and can:
 - Leverage different architectures (CPU, GPU, TPU).
 - Use different tech stacks (tools, services).
 - Have separate development team.
