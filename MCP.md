@@ -23,11 +23,11 @@ MCP follows a client-server architecture with the three main roles: Host, Client
 ## MCP Core Capabilities
 
 Tools, prompts and resources form the three core capabilities of the MCP framework:
-- **Tools** are executable actions or functions that the AI (host/client) can invoke (often with side effects or external API calls). Tools are usually triggered by the AI model’s choice, which means the LLM (via the host) decides to call a tool when it determines it needs that functionality.
-- **Resources** are read-only data sources that the AI (host/client) can query for information (no side effects, just retrieval).
-- **Prompts** are predefined prompt templates or workflows that servers can supply.
+- **Tools** are executable actions or functions that the AI (host/client) can invoke (often with side effects or external API calls). Tools are usually triggered by the AI model’s choice, which means the LLM (via the host) decides to call a tool when it determines it needs that functionality. Tools are registered with metadata (e.g. name, description, expected input/output types). The agent uses tools via a function-calling interface or tool selection reasoning step. Tool usage is tracked in context memory, including result summaries and relevance.
+- **Resources** are read-only data sources (long-term knowledge or assets) that the AI (host/client) can query for information (no side effects, just retrieval). Unlike tools, resources typically do not involve heavy computation or side effects, since they are often just information lookup. Resources are usually accessed under the host application’s control (not spontaneously by the model). In practice, this might mean the Host knows when to fetch a certain context for the model. Resources are often indexed in a vector store or database, or retrieved via similarity search or relevance scoring.
+- **Prompts** are predefined  or dynamically generated templates or conversation flows that can be injected to guide the AI’s behavior (and Server can supply). Prompt capability provides a canned set of instructions or an example dialogue that can help steer the model for certain tasks. Prompts, as a capability, blur the line between data and instructions.
 
-
+![Source: none](/images/mcp_03.png)
 
 ## References
 - [MCP - The Illustrated Guidebook from DailyDoseofDS.com](https://www.dailydoseofds.com/)
