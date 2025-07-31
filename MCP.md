@@ -20,7 +20,14 @@ MCP follows a client-server architecture with the three main roles: Host, Client
 
 ![Source: https://www.dailydoseofds.com/](/images/mcp_02.png)
 
+## MCP Core Capabilities
+
+Tools, prompts and resources form the three core capabilities of the MCP framework:
+- **Tools** are executable actions or functions that the AI (host/client) can invoke (often with side effects or external API calls). Tools are usually triggered by the AI model’s choice, which means the LLM (via the host) decides to call a tool when it determines it needs that functionality.
+- **Resources** are read-only data sources that the AI (host/client) can query for information (no side effects, just retrieval).
+- **Prompts** are predefined prompt templates or workflows that servers can supply.
+
 
 
 ## References
-- [MCP - The Illustrated Guidebook](https://www.dailydoseofds.com/)
+- [MCP - The Illustrated Guidebook from DailyDoseofDS.com](https://www.dailydoseofds.com/)
