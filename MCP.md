@@ -1,17 +1,18 @@
 # Model Context Protocol (MCP)
 
-**Model context protocol (MCP)** is a standardized interface and framework that allows AI models to seamlessly interact with external tools, resources, and environments.
+**Model context protocol (MCP)** is an open standard proposed by [Anthrop\c](https://www.anthropic.com/) that enables developers to build secure, two-way connections between their data sources and AI-powered tools.
 
 ![Source: https://www.dailydoseofds.com/](/images/mcp_01.png)
 
 MCP was developed to:
-- Provide Structured, Persistent Context for Agents. LLMs like GPT are stateless: they don’t "remember" past interactions unless the entire history is sent again. MCP provides a structured way to maintain, manage, and update context between prompts, allowing agents to have memory and continuity in reasoning.
-- Enable Modular and Interoperable Agent Design. Agentic systems often have multiple components: planner, executor, retriever, memory store, etc. MCP standardises how these components communicate, making it easier to swap models or tools while maintaining a shared context.
-- Manage Complex Contexts Beyond Prompt Windows. With limited token windows, agents need to prioritise, compress, and retrieve context efficiently. MCP supports context chunking, tagging, and relevance scoring to decide what information to include in prompts.
-- Support Multi-Agent Collaboration. In systems with multiple agents working together (e.g., agent collectives), there needs to be a shared context or protocol for exchanging memory and goals. MCP acts as the protocol layer that supports coordination.
-- Facilitate Agent Autonomy and Planning. Agents need to store goals and tasks, reflect on past actions, and plan ahead. MCP structures this episodic memory, goal state, and task history to help the agent reason more autonomously.
+- Provide a protocol for seamless integration between LLM applications and external data sources.
+- Replace fragmented integrations with a single protocol.
+- Make truly connected systems simpler and easier to scale.
+
 
 ## MCP Architecture Overview
+The architecture is straightforward: developers can either expose their data through MCP servers or build AI applications (MCP clients) that connect to these servers.
+
 
 MCP follows a client-server architecture with the three main roles: Host, Client, and Server.
 - **MCP Host** is a user-facing AI application, an environment where the AI model lives and interacts with a user. Host initiates connections to the available MCP servers when the system needs them. It captures the user's input, keeps the conversation history, and displays the model’s replies.
@@ -31,4 +32,7 @@ Tools, prompts and resources form the three core capabilities of the MCP framewo
 
 ## References
 - [Introducing the Model Context Protocol by Anthropic](https://www.anthropic.com/news/model-context-protocol)
+- [Model Context Protocol Specification](https://modelcontextprotocol.io/overview)
+- [Model Context Protocol Gihub repository](https://github.com/modelcontextprotocol)
+- [Model Context Protocol servers reference implementation](https://github.com/modelcontextprotocol/servers)
 - [MCP - The Illustrated Guidebook from DailyDoseofDS.com](https://www.dailydoseofds.com/)
