@@ -16,7 +16,7 @@ MCP was developed to:
 MCP follows a client-server architecture with the three main roles: Host, Client, and Server.
 - **MCP Host** is a user-facing AI application, an environment where the AI model lives and interacts with a user. Host initiates connections to the available MCP servers when the system needs them. It captures the user's input, keeps the conversation history, and displays the model’s replies.
 - **MCP Client** is a component within the Host that handles the low-level communication with an MCP Server. While Host decides what to do, Client knows how to speak MCP to carry out those instructions with the server.
-- **MCP Server** is an external program or service that provides the capabilities (tools, data, etc.) to the application. Server advertises what it can do in a standard format (so clients can query and understand available tools) and executes requests coming from clients, then return results.
+- **MCP Server** is an external program or service that provides the capabilities (tools, context and prompt templates) to the application (Host). Server advertises what it can do in a standard format (so clients can query and understand available tools) and executes requests coming from clients, then return results.
 
 ![Source: https://www.dailydoseofds.com/](/images/mcp_02.png)
 
@@ -30,4 +30,5 @@ Tools, prompts and resources form the three core capabilities of the MCP framewo
 ![Source: none](/images/mcp_03.png)
 
 ## References
+- [Introducing the Model Context Protocol by Anthropic](https://www.anthropic.com/news/model-context-protocol)
 - [MCP - The Illustrated Guidebook from DailyDoseofDS.com](https://www.dailydoseofds.com/)
