@@ -1,4 +1,4 @@
-# AI Agents / Agentic AI Systems
+# AI Agents / Agentic AI Systems / Agentic Design Patterns
 
 AI Agents are programs where LLM outputs control the workflow.
 
@@ -14,6 +14,8 @@ An Agentic AI solution involves any or all off these:
 Anthropic distinguishes two types of Agentic Systems:
 - **Workflows** are systems where LLMs and tools are orchestrated through predefined code paths.
 - **Agents** are systems where LLMs dynamically direct their own processes and tool usage, maintaining control over how they accomplish tasks.
+
+However, sometimes it is very hard to keep this distinction in practice. For example, it can be argued if an orchestrator-workers (see below) is a workflow or rather an agent pattern.
 
 The most successful implementations of agentic systems use simple, composable patterns rather than complex frameworks.
 
@@ -55,7 +57,7 @@ This workflow is ideal for situations where the task can be easily and cleanly d
 
 ### Routing
 
-**Routing** classifies an input and directs it to a specialized followup task. This workflow allows for separation of concerns, and building more specialized prompts. Without this workflow, optimizing for one kind of input can hurt performance on other inputs. Classification can be handled accurately, either by an LLM or a more traditional classification model/algorithm.
+**Routing** classifies an input and directs it to a specialized followup task (one at a time). This workflow allows for separation of concerns, and building more specialized prompts. Without this workflow, optimizing for one kind of input can hurt performance on other inputs. Classification can be handled accurately, either by an LLM or a more traditional classification model/algorithm.
 
 ![Source: https://www.anthropic.com/engineering/building-effective-agents](/images/agentic_ai_workflow_patterns_02.png)
 
@@ -68,8 +70,8 @@ Routing works well for complex tasks where there are distinct categories that ar
 
 ### Parallelization
 
-**Parallelization**. LLMs can sometimes work simultaneously on a task and have their outputs aggregated programmatically. This workflow, parallelization, manifests in two key variations:
-- **Sectioning**: Breaking a task into independent subtasks run in parallel.
+In **Parallelization** a developer code splits a task into multiple ones. LLMs can sometimes work simultaneously (concurently) on a task and have their outputs aggregated programmatically. This workflow, parallelization, manifests in two key variations:
+- **Sectioning**: Breaking a task into independent (different) subtasks run in parallel.
 - **Voting**: Running the same task multiple times to get diverse outputs.
 
 ![Source: https://www.anthropic.com/engineering/building-effective-agents](/images/agentic_ai_workflow_patterns_03.png)
@@ -87,7 +89,7 @@ Parallelization is effective when the divided subtasks can be parallelized for s
 
 ### Orchestrator-workers
 
-**Orchestrator-workers** - a central LLM dynamically breaks down tasks, delegates them to worker LLMs, and synthesizes their results.
+In **Orchestrator-workers** a central LLM dynamically breaks down tasks, delegates them to worker LLMs, and synthesizes their results.
 
 ![Source: https://www.anthropic.com/engineering/building-effective-agents](/images/agentic_ai_workflow_patterns_04.png)
 
@@ -110,22 +112,26 @@ This workflow is particularly effective when we have clear evaluation criteria, 
 #### Examples where this workflow is useful
 - Literary translation where there are nuances that the translator LLM might not capture initially, but where an evaluator LLM can provide useful critiques.
 - Complex search tasks that require multiple rounds of searching and analysis to gather comprehensive information, where the evaluator decides whether further searches are warranted.
-- 
+
 
 ## Agents
-- Agents begin their work with either a command from, or interactive discussion with, the human user. 
-- Once the task is clear, agents plan and operate independently, potentially returning to the human for further information or judgement. During execution, it's crucial for the agents to gain “ground truth” from the environment at each step (such as tool call results or code execution) to assess its progress. 
-- Agents can then pause for human feedback at checkpoints or when encountering blockers. 
+- Agents begin their work with either a command from, or interactive discussion with, the human user. The process and the design is open-ended.
+- Once the task is clear, agents plan and operate independently, potentially returning to the human for further information or judgement. During execution, it's crucial for the agents to gain “ground truth” from the environment at each step (such as tool call results or code execution) to assess its progress. Agents implement feedback loops.
+- Agents can then pause for human feedback at checkpoints or when encountering blockers. There is no fixed path through the design pattern. The flow is less predictible.
 - The task often terminates upon completion, but it’s also common to include stopping conditions (such as a maximum number of iterations) to maintain control.
 
 Agents can handle sophisticated tasks, but their implementation is often straightforward. They are typically just LLMs using tools based on environmental feedback in a loop. It is therefore crucial to design toolsets and their documentation clearly and thoughtfully.
 
 ![Source: https://www.anthropic.com/engineering/building-effective-agents](/images/agentic_ai_02.png)
 
-### When to use agents
-Agents can be used for open-ended problems where it’s difficult or impossible to predict the required number of steps, and where you can’t hardcode a fixed path. The LLM will potentially operate for many turns, and you must have some level of trust in its decision-making. Agents' autonomy makes them ideal for scaling tasks in trusted environments.
+### Risks of Agent Farmeworks
+- **Unpredictable path**. Agents can be used for open-ended problems where it’s difficult or impossible to predict the required number of steps, and where you can’t hardcode a fixed path. 
+- **Unpredictable output**. There is no guarantee that the output will be of great quality. The LLM will potentially operate for many turns, and you must have some level of trust in its decision-making. Agents' autonomy makes them ideal for scaling tasks in trusted environments.
+- **Unpredictable costs**. The autonomous nature of agents means higher costs, and the potential for compounding errors. It is recommended to perform extensive testing in sandboxed environments, along with the appropriate guardrails.
 
-The autonomous nature of agents means higher costs, and the potential for compounding errors. It is recommended to perform extensive testing in sandboxed environments, along with the appropriate guardrails.
+As a result, Agents should be:
+- Monitored. Visibility and tracing are key.
+- Equipped with guardrails to ensure their behavior is safe, consistent and within intended boundaries.
 
 ### Examples where agents are useful
 - A customer support representative combines familiar chatbot interfaces with enhanced capabilities through tool integration. This is a natural fit for more open-ended agents because:
