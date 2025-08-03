@@ -1,3 +1,4 @@
+- **ACI** - Agent-Computer Interface
 - **AI** - Artificial Intelligence
 - **CDC** - Change Data Capture
 - **CLI** - Command Line Interface
@@ -5,6 +6,7 @@
 - **DPO** - Direct Preference Optimization
 - **ETL** - Extract Load Transform
 - **FTI** - Feature-Training-Inference (Architecture)
+- **HCI** - Human-Computer Interface
 - **LLM** - Large Language Model
 - **MVP** - Minimum Viable Product
 - **NLP** - Natural Language processing
