@@ -1,10 +1,10 @@
 # AI Agents / Agentic AI Systems / Agentic Design Patterns
 
-AI Agents are programs where LLM outputs control the workflow.
+**AI Agents** are programs where LLM outputs control the workflow.
 
 
 ## Agentic AI
-An Agentic AI solution involves any or all off these:
+An **Agentic AI** solution involves any or all off these:
 - Multiple LLm calls
 - LLMs with ability to use Tools
 - An environment where LLMs interact
@@ -15,7 +15,7 @@ Anthropic distinguishes two types of Agentic Systems:
 - **Workflows** are systems where LLMs and tools are orchestrated through predefined code paths.
 - **Agents** are systems where LLMs dynamically direct their own processes and tool usage, maintaining control over how they accomplish tasks.
 
-However, sometimes it is very hard to keep this distinction in practice. For example, it can be argued if an orchestrator-workers (see below) is a workflow or rather an agent pattern.
+However, sometimes it is very hard to keep this distinction in practice. For example, it can be argued if an orchestrator-workers (see below) is a workflow or rather an agentic pattern.
 
 The most successful implementations of agentic systems use simple, composable patterns rather than complex frameworks.
 
@@ -57,7 +57,7 @@ This workflow is ideal for situations where the task can be easily and cleanly d
 
 ### Routing
 
-**Routing** classifies an input and directs it to a specialized followup task (one at a time). This workflow allows for separation of concerns, and building more specialized prompts. Without this workflow, optimizing for one kind of input can hurt performance on other inputs. Classification can be handled accurately, either by an LLM or a more traditional classification model/algorithm.
+**Routing** classifies an input and directs it to a specialized follow-up task (one at a time). This workflow allows for separation of concerns, and building more specialized prompts. Without this workflow, optimizing for one kind of input can hurt performance on other inputs. Classification can be handled accurately, either by an LLM or a more traditional classification model/algorithm.
 
 ![Source: https://www.anthropic.com/engineering/building-effective-agents](/images/agentic_ai_workflow_patterns_02.png)
 
@@ -70,7 +70,7 @@ Routing works well for complex tasks where there are distinct categories that ar
 
 ### Parallelization
 
-In **Parallelization** a developer code splits a task into multiple ones. LLMs can sometimes work simultaneously (concurently) on a task and have their outputs aggregated programmatically. This workflow, parallelization, manifests in two key variations:
+In **Parallelization** a developer code splits a task into multiple ones. In this pattern, LLMs can work on a task simultaneously (concurently) and have their outputs aggregated programmatically. This workflow, parallelization, manifests in two key variations:
 - **Sectioning**: Breaking a task into independent (different) subtasks run in parallel.
 - **Voting**: Running the same task multiple times to get diverse outputs.
 
@@ -129,7 +129,7 @@ Agents can handle sophisticated tasks, but their implementation is often straigh
 - **Unpredictable output**. There is no guarantee that the output will be of great quality. The LLM will potentially operate for many turns, and you must have some level of trust in its decision-making. Agents' autonomy makes them ideal for scaling tasks in trusted environments.
 - **Unpredictable costs**. The autonomous nature of agents means higher costs, and the potential for compounding errors. It is recommended to perform extensive testing in sandboxed environments, along with the appropriate guardrails.
 
-As a result, Agents should be:
+As a result, agents should be:
 - Monitored. Visibility and tracing are key.
 - Equipped with guardrails to ensure their behavior is safe, consistent and within intended boundaries.
 
@@ -150,7 +150,7 @@ As a result, Agents should be:
 
 
 ## Summary
-The key to success, as with any LLM features, is measuring performance and iterating on implementations. To repeat: you should consider adding complexity only when it demonstrably improves outcomes.
+The key to success, as with any LLM features, is measuring performance and iterating on implementations. You should consider adding complexity only when it demonstrably improves outcomes.
 
 Success in the LLM space isn't about building the most sophisticated system. It's about building the right system for your needs. Start with simple prompts, optimize them with comprehensive evaluation, and add multi-step agentic systems only when simpler solutions fall short.
 
