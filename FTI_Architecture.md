@@ -10,11 +10,11 @@
 Different subsystems (pipelines) are independent from others and can:
 - Leverage different architectures (CPU, GPU, TPU).
 - Use different tech stacks (tools, services).
-- Have separate development team.
+- Have separate development team:
+    - The data engineering team owns the Data Pipeline.
+    - The ML engineering teams own the FTI Pipelines.
 - Be developed, deployed, and scaled separately (independently).
-- The data engineering team owns the Data Pipeline.
-- The ML engineering team owns the FTI Pipelines.
-- Interfaces between subsystems remain the same regardless of subsystems' internal complexity.
+- Have the same interfaces between pipelines regardless of their internal complexity.
 
 
 ### Data Collection Pipeline (ETL)
