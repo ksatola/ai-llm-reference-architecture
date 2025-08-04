@@ -37,7 +37,7 @@ Different subsystems (pipelines) are independent from others and can:
 - Tools: PyTorch, TensorFlow, Scikit-Learn...
 
 
-### Inference (serving) Pipeline
+### Inference (Serving) Pipeline
 - Take as input the features and labels from the feature store and the trained model from the model registry. With these two, make predictions in either batch or real-time mode.
 - Tools: PyTorch, TensorFlow, Scikit-Learn...
 
@@ -51,7 +51,7 @@ Different subsystems (pipelines) are independent from others and can:
 
 
 ### Model Registry 
-- Centralized repository that manages ML models throughout their lifecycle.
+- Keep and manage ML models throughout their lifecycle in s centralized repository.
 - Store models along with their metadata, version history, and performance metrics.
 - Serve as a single source of truth. 
 - Track, share, and document model versions.
