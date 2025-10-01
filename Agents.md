@@ -1,6 +1,6 @@
 # AI Agents / Agentic AI Systems / Agentic Design Patterns
 
-**AI Agents** are programs where LLM outputs control the workflow (LLM decides what tasks should be done and in what sequence).
+**AI Agents** are programs where LLM (Large Language Model) outputs control the workflow (LLM decides what tasks should be done and in what sequence).
 
 
 ## Agentic AI
@@ -13,38 +13,38 @@ An **Agentic AI** solution involves any or all off these:
 
 [Anthropic](https://www.anthropic.com/engineering/building-effective-agents) distinguishes two types of Agentic Systems:
 - **Workflows** are systems where LLMs and tools are orchestrated through `predefined code paths`.
-- **Agents** are systems where LLMs dynamically direct their own processes and tool usage, maintaining control over how they accomplish tasks.
+- **Agents** are systems where `LLMs dynamically direct their own processes and tool usage`, maintaining control over how they accomplish tasks.
 
 However, sometimes it is very hard to keep this distinction in practice. For example, it can be argued if an orchestrator-workers (see below) is a workflow or rather an agentic pattern.
 
 The most successful implementations of agentic systems use simple, composable patterns rather than complex frameworks.
 
 
-## When To (Not) Use Agents
-When building applications with LLMs, find the simplest solution possible, and only increase complexity when needed. This might mean not building agentic systems at all. Agentic systems often trade latency and cost for better task performance, and you should consider when this tradeoff makes sense.
+## When (Not) To Use Agents
+When building applications with LLMs, `find the simplest solution possible`, and only increase complexity when needed. This might mean not building agentic systems at all. Agentic systems often trade latency and cost for better task performance, and you should consider when this tradeoff makes sense.
 
 When more complexity is warranted, workflows offer predictability and consistency for well-defined tasks, whereas agents are the better option when flexibility and model-driven decision-making are needed at scale. For many applications, however, optimizing single LLM calls with retrieval and in-context examples is usually enough.
 
 
 ## When And How To Use Frameworks
 There are many frameworks that make agentic systems easier to implement, including:
-- LangGraph from [LangChain](https://langchain-ai.github.io/langgraph/).
-- [Amazon Bedrock's](https://aws.amazon.com/bedrock/agents/) AI Agent framework.
-- [Rivet](https://rivet.ironcladapp.com/), a drag and drop GUI LLM workflow builder.
-- [Vellum](https://www.vellum.ai/), another GUI tool for building and testing complex workflows.
+- LangGraph from [LangChain](https://langchain-ai.github.io/langgraph/)
+- [Amazon Bedrock's](https://aws.amazon.com/bedrock/agents/) AI Agent framework
+- [Rivet](https://rivet.ironcladapp.com/), a drag and drop GUI LLM workflow builder
+- [Vellum](https://www.vellum.ai/), another GUI tool for building and testing complex workflows
 
 These frameworks make it easy to get started by simplifying standard low-level tasks like calling LLMs, defining and parsing tools, and chaining calls together. However, they often create extra layers of abstraction that can obscure the underlying prompts ​​and responses, making them harder to debug. They can also make it tempting to add complexity when a simpler setup would suffice.
 
 ## The Augmented LLM
-The basic building block of agentic systems is an LLM enhanced with augmentations such as retrieval, tools, and memory. Our current models can actively use these capabilities—generating their own search queries, selecting appropriate tools, and determining what information to retain.
+The basic building block of agentic systems is an LLM enhanced with augmentations such as retrieval, tools, and memory. Current LLMs can actively use these capabilities—generating their own search queries, selecting appropriate tools, and determining what information to retain.
 
 ![Source: https://www.anthropic.com/engineering/building-effective-agents](/images/agentic_ai_01.png)
 
 ## 5 Workflow Design Patterns
 
-### Prompt chaining
+### 1. Prompt chaining
 
-**Prompt chaining** decomposes a task into a sequence of steps, where each LLM call processes the output of the previous one. You can add programmatic checks (see "gate” in the diagram below) on any intermediate steps to ensure that the process is still on track.
+**Prompt chaining** decomposes a task into a sequence of steps, where each LLM call processes the output of the previous one. You can add programmatic checks (see "Gate” in the diagram below) on any intermediate steps to ensure that the process is still on track.
 
 ![Source: https://www.anthropic.com/engineering/building-effective-agents](/images/agentic_ai_workflow_patterns_01.png)
 
@@ -55,9 +55,9 @@ This workflow is ideal for situations where the task can be easily and cleanly d
 - Generating Marketing copy, then translating it into a different language.
 - Writing an outline of a document, checking that the outline meets certain criteria, then writing the document based on the outline.
 
-### Routing
+### 2. Routing
 
-**Routing** classifies an input and directs it to a specialized follow-up task (one at a time). This workflow allows for separation of concerns, and building more specialized prompts. Without this workflow, optimizing for one kind of input can hurt performance on other inputs. Classification can be handled accurately, either by an LLM or a more traditional classification model/algorithm.
+**Routing** classifies an input and directs it to a specialized follow-up task (`one at a time`). This workflow allows for separation of concerns, and building more specialized prompts. Without this workflow, optimizing for one kind of input can hurt performance on other inputs. Classification can be handled accurately, either by an LLM or a more traditional classification model/algorithm.
 
 ![Source: https://www.anthropic.com/engineering/building-effective-agents](/images/agentic_ai_workflow_patterns_02.png)
 
@@ -68,9 +68,9 @@ Routing works well for complex tasks where there are distinct categories that ar
 - Directing different types of customer service queries (general questions, refund requests, technical support) into different downstream processes, prompts, and tools.
 - Routing easy/common questions to smaller models like Claude 3.5 Haiku and hard/unusual questions to more capable models like Claude 3.5 Sonnet to optimize cost and speed.
 
-### Parallelization
+### 3. Parallelization
 
-In **Parallelization** a developer code splits a task into multiple ones. In this pattern, LLMs can work on a task simultaneously (concurently) and have their outputs aggregated programmatically. This workflow, parallelization, manifests in two key variations:
+In **Parallelization** a developer code splits a task into multiple ones. In this pattern, LLMs can work on a task simultaneously (`concurently`) and have their outputs aggregated programmatically. This workflow, parallelization, manifests in two key variations:
 - **Sectioning**: Breaking a task into independent (different) subtasks run in parallel.
 - **Voting**: Running the same task multiple times to get diverse outputs.
 
@@ -87,20 +87,20 @@ Parallelization is effective when the divided subtasks can be parallelized for s
     - Reviewing a piece of code for vulnerabilities, where several different prompts review and flag the code if they find a problem.
     - Evaluating whether a given piece of content is inappropriate, with multiple prompts evaluating different aspects or requiring different vote thresholds to balance false positives and negatives.
 
-### Orchestrator-workers
+### 4. Orchestrator-workers
 
 In **Orchestrator-workers** a central LLM dynamically breaks down tasks, delegates them to worker LLMs, and synthesizes their results.
 
 ![Source: https://www.anthropic.com/engineering/building-effective-agents](/images/agentic_ai_workflow_patterns_04.png)
 
 #### When to use this workflow
-This workflow is well-suited for complex tasks where you can’t predict the subtasks needed (in coding, for example, the number of files that need to be changed and the nature of the change in each file likely depend on the task). Whereas it’s topographically similar, the key difference from parallelization is its flexibility—subtasks aren't pre-defined, but determined by the orchestrator based on the specific input.
+This workflow is well-suited for complex tasks where you can’t predict the subtasks needed (in coding, for example, the number of files that need to be changed and the nature of the change in each file likely depend on the task). Whereas it’s topographically similar, the key difference from parallelization is its flexibility - `subtasks aren't pre-defined`, but determined by the orchestrator based on the specific input.
 
 #### Examples where this workflow is useful
 - Coding products that make complex changes to multiple files each time.
 - Search tasks that involve gathering and analyzing information from multiple sources for possible relevant information.
 
-### Evaluator-optimizer
+### 5. Evaluator-optimizer
 
 **Evaluator-optimizer** - one LLM call generates a response while another provides evaluation and feedback in a loop.
 
@@ -130,8 +130,8 @@ Agents can handle sophisticated tasks, but their implementation is often straigh
 - **Unpredictable costs**. The autonomous nature of agents means higher costs, and the potential for compounding errors. It is recommended to perform extensive testing in sandboxed environments, along with the appropriate guardrails.
 
 As a result, agents should be:
-- Monitored. Visibility and tracing are key.
-- Equipped with guardrails to ensure their behavior is safe, consistent and within intended boundaries.
+- **Monitored**. Visibility and tracing are key.
+- **Equipped with guardrails** to ensure their behavior is safe, consistent and within intended boundaries.
 
 ### Examples where agents are useful
 - A customer support representative combines familiar chatbot interfaces with enhanced capabilities through tool integration. This is a natural fit for more open-ended agents because:
