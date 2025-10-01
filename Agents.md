@@ -1,6 +1,6 @@
 # AI Agents / Agentic AI Systems / Agentic Design Patterns
 
-**AI Agents** are programs where LLM outputs control the workflow.
+**AI Agents** are programs where LLM outputs control the workflow (LLM decides what tasks should be done and in what sequence).
 
 
 ## Agentic AI
@@ -9,7 +9,7 @@ An **Agentic AI** solution involves any or all off these:
 - LLMs with ability to use Tools
 - An environment where LLMs interact
 - A Planner to coordinate activities
-- Autonomy
+- Autonomy (LLM controls the workflow)
 
 Anthropic distinguishes two types of Agentic Systems:
 - **Workflows** are systems where LLMs and tools are orchestrated through predefined code paths.
