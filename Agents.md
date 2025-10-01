@@ -5,14 +5,14 @@
 
 ## Agentic AI
 An **Agentic AI** solution involves any or all off these:
-- Multiple LLm calls
+- Multiple LLM calls
 - LLMs with ability to use Tools
 - An environment where LLMs interact
 - A Planner to coordinate activities
 - Autonomy (LLM controls the workflow)
 
-Anthropic distinguishes two types of Agentic Systems:
-- **Workflows** are systems where LLMs and tools are orchestrated through predefined code paths.
+[Anthropic](https://www.anthropic.com/engineering/building-effective-agents) distinguishes two types of Agentic Systems:
+- **Workflows** are systems where LLMs and tools are orchestrated through `predefined code paths`.
 - **Agents** are systems where LLMs dynamically direct their own processes and tool usage, maintaining control over how they accomplish tasks.
 
 However, sometimes it is very hard to keep this distinction in practice. For example, it can be argued if an orchestrator-workers (see below) is a workflow or rather an agentic pattern.
