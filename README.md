@@ -16,9 +16,24 @@ version 0.0.2
 
 ### Tools
 - [What-If-Tool (WIT)](https://pair-code.github.io/what-if-tool/)
-- [LLM Leaderboard](https://www.vellum.ai/llm-leaderboard)
+- [Vellum LLM Leaderboard](https://www.vellum.ai/llm-leaderboard)
 - [Tensorflow Playground](https://playground.tensorflow.org/)
 - [Diagrams.net](https://app.diagrams.net/)
+- [UV Python package manager](https://github.com/astral-sh/uv), [docs](https://docs.astral.sh/uv/)
+
+'''
+uv --version
+uv sync
+uv run python_script.py
+uv python list
+'''
+
+- [Cursor AI-powered IDE](https://cursor.com/)
+
+
+### AI Environments
+- [n8n - automate business processes](https://n8n.io/)
+- [Open AI](https://platform.openai.com/)
 
 
 ### Online Education, Books
@@ -30,8 +45,13 @@ version 0.0.2
   - [A Beginner-friendly and Comprehensive Deep Dive on Vector Databases](https://www.dailydoseofds.com/a-beginner-friendly-and-comprehensive-deep-dive-on-vector-databases)
 
 
+## Projects, Examples
+- [MLOps Training Metarials](https://github.com/ksatola/cerebro-agh)
+- [LLMs evaluation with another LLM as a judge](./examples/LLM_evaluation_with_LLM_as_a_judge.ipynb)
+
+
 ## For Further Processing
-- [MLOps Training](https://github.com/ksatola/cerebro-agh)
+
 
 
 
