@@ -21,12 +21,13 @@ version 0.0.2
 - [Diagrams.net](https://app.diagrams.net/)
 - [UV Python package manager](https://github.com/astral-sh/uv), [docs](https://docs.astral.sh/uv/)
 
-'''
+```
 uv --version
 uv sync
 uv run python_script.py
 uv python list
-'''
+```
+
 
 - [Cursor AI-powered IDE](https://cursor.com/)
 
@@ -45,9 +46,11 @@ uv python list
   - [A Beginner-friendly and Comprehensive Deep Dive on Vector Databases](https://www.dailydoseofds.com/a-beginner-friendly-and-comprehensive-deep-dive-on-vector-databases)
 
 
-## Projects, Examples
+## AI Projects, Examples
 - [MLOps Training Metarials](https://github.com/ksatola/cerebro-agh)
 - [LLMs evaluation with another LLM as a judge](./examples/LLM_evaluation_with_LLM_as_a_judge.ipynb)
+- [AI Agent Example](https://github.com/ksatola/ai-llm-agent-example)
+- [Twin Writer - AI LLM System Architecture Review](https://github.com/ksatola/ai-llm-twin-writer)
 
 
 ## For Further Processing
