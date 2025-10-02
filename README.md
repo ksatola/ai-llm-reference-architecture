@@ -28,13 +28,17 @@ uv run python_script.py
 uv python list
 ```
 
-
 - [Cursor AI-powered IDE](https://cursor.com/)
 
 
-### AI Environments
-- [n8n - automate business processes](https://n8n.io/)
+### AI Platforms, Environments
 - [Open AI](https://platform.openai.com/)
+- [ANTHROP\C](https://www.anthropic.com/)
+- [Google AI Studio](https://aistudio.google.com/)
+- [deepseek](https://www.deepseek.com/en)
+- [groq](https://groq.com/)
+- [Ollama (run LLMs locally)](https://ollama.com/)
+- [n8n (low code Agentic AI platform)](https://n8n.io/)
 
 
 ### Online Education, Books
