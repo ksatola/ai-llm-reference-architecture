@@ -20,10 +20,17 @@ version 0.0.2
 - [Tensorflow Playground](https://playground.tensorflow.org/)
 - [Diagrams.net](https://app.diagrams.net/)
 - [UV Python package manager](https://github.com/astral-sh/uv), [docs](https://docs.astral.sh/uv/)
+- [gradio for building shareable web UIs](https://www.gradio.app/)
+- [Pushover for simple notifications](https://pushover.net/)
+- [Hugging Face Spaces](https://huggingface.co/)
 
 ```
+uv init
 uv --version
+uv add gradio openai
 uv sync
+uv export -o requirements.txt
+uv export --format requirements-txt --no-hashes -o requirements.txt
 uv run python_script.py
 uv python list
 ```
@@ -32,12 +39,19 @@ uv python list
 
 
 ### AI Platforms, Environments
-- [Open AI](https://platform.openai.com/)
+- [OpenAI](https://platform.openai.com/)
 - [ANTHROP\C](https://www.anthropic.com/)
 - [Google AI Studio](https://aistudio.google.com/)
 - [deepseek](https://www.deepseek.com/en)
 - [groq](https://groq.com/)
 - [Ollama (run LLMs locally)](https://ollama.com/)
+
+
+### Agentic AI Frameworks
+- [OpenAI Agents SDK](https://github.com/openai/openai-agents-python)
+- [Crew AI]()
+- [LangGraph]()
+- [Microsoft AutoGen]()
 - [n8n (low code Agentic AI platform)](https://n8n.io/)
 
 
