@@ -69,6 +69,7 @@ uv python list
 - [LLMs evaluation with another LLM as a judge](./examples/LLM_evaluation_with_LLM_as_a_judge.ipynb)
 - [AI Agent Example](https://github.com/ksatola/ai-llm-agent-example)
 - [Twin Writer - AI LLM System Architecture Review](https://github.com/ksatola/ai-llm-twin-writer)
+- [AI Career Alter Ego (plain implementation)](https://github.com/ksatola/ai-career-alter-ego)
 
 
 ## For Further Processing
