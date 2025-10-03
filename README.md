@@ -52,6 +52,7 @@ uv python list
 - [Crew AI]()
 - [LangGraph]()
 - [Microsoft AutoGen]()
+- [Google Agent Development Kit (ADK)](https://google.github.io/adk-docs/)
 - [n8n (low code Agentic AI platform)](https://n8n.io/)
 
 
@@ -69,7 +70,8 @@ uv python list
 - [LLMs evaluation with another LLM as a judge](./examples/LLM_evaluation_with_LLM_as_a_judge.ipynb)
 - [AI Agent Example](https://github.com/ksatola/ai-llm-agent-example)
 - [Twin Writer - AI LLM System Architecture Review](https://github.com/ksatola/ai-llm-twin-writer)
-- [AI Career Alter Ego (plain implementation)](https://github.com/ksatola/ai-career-alter-ego)
+- [AI Career Alter Ego (plain implementation)](https://github.com/ksatola/ai-career-alter-ego) - A chat for anyone to interact with to answer all possible questions regarding my career, skills and experience. Apart from the OpenAI LLM generating answers this AI application uses another LLM for answers evaluation (using the agentic AI patterns called evaluator-optimizer), as well as various resources and tools. As part of the solution, there is CI/CD workflow configured using Github Actions and the working solution is deployed to [Hugging Face Spaces](https://huggingface.co/spaces/ksatola/career_chat) upon Github PR merge.
+- [Email (generation, evaluation and sending) process automation with AI](XXXXXXXXXX) - There are 2 AI managers in this AI workflow: Sales Manager and Email Manager. The first one evaluates and approves the best email content proposed by various AI agents (sales representatives) and hands it over to the second manager handling best email subject generation, email body to HTML formatting and sending. This AI workflow prototype is built using OpenAI Agents SDK demonstrating agents, traces, tools and handoffs SDK components. It is immediately applicable to Sales Automation; but more generally this could be applied to end-to-end automation of any business process through conversations and tools.
 
 
 ## For Further Processing
