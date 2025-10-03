@@ -9,4 +9,4 @@ The term was popularized by Andrej Karpathy in 2025 and has since been used for 
 - **Step up the vibe** - break down your request into independently testable steps and tell LLM to work on each step separatelly (or ask LLM to split your problem into such steps without code and then ask LLM to write code for each of the steps separately)
 - **Vibe and validate** - ask an LLM then get another LLM to check
 - **Vibe with variety** - ask for more than one solution to the same problem and pick the best
-- **Vibe with understanding** - ask LLM to explain cleanly what the code does
+- **Vibe with understanding** - ask LLM to explain clearly what the code does
