@@ -1,5 +1,6 @@
 - **ACI** - Agent-Computer Interface
 - **AI** - Artificial Intelligence
+- **AMP** - Agent Management Platform
 - **CDC** - Change Data Capture
 - **CLI** - Command Line Interface
 - **DAG** - Directed Acyclic Graph
