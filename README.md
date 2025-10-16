@@ -21,9 +21,9 @@ version 0.0.3
 - [Deep Research with AI](https://github.com/ksatola/ai-deep-research) - An AI assistent able to go off, search the internet and do some research on a given topic. This agentic AI workflow has the following steps: ask clarifying questions, plan the search execution, perform searches, write report, evaluate report, optimize report, and send email with the final optimized report. The solution is based on OpenAI Agents SDK and Resend REST API for sending emails.
 - [AI Debate](./examples/crewai_debate) - Two agents provide arguments for and against a motion and a third one judges which one is more convincing. This is a simplistic workflow example of using CrewAI framework. See [README.md](./examples/crewai_debate/README.md) for more details.
 - [Financial Researcher](./examples/crewai_financial_researcher) - Using sequential process, SERP API as a tool, a financial researcher agent provides inputs to the market analyst to create up-to-date finacial report regaring a chosen company. Built with CrewAI and SERP API powered by Google Search.
-- [Stock Picker](./examples/crewai_stock_picker) - Using trending company finder, financial researcher, stock picker and manager (heriarchical process) agents, structured outputs, custom (Pushover for push notifications) and SERP API tools to pick a company for investement in a specified sector. It also uses RAG vector and SQL stores to provide additional context to prompt and to ensure different companies are selected each time. Built with CrewAI.
-- [Developer Agent](XXXXXXXXX) - This Coder Agents workflow has ability to write code for specified assignment, execute it in a Docker container, and investigate the results. Built with CrewAI's dockerized code execution capabilities.
-- [AI Engineering Team](XXXXXXXXX) - Given requirements, four agents playing common roles in a software development team: engineering lead, frontend developer, backend developer and test engineer build a complete and working solution (a web python-based application). The steps include application design, backend and frontent components development (a single Gradio UI Python module) and then create unit tests. The app is being executed by the AI Engineering Team in a Docker container to confirm that it is working and tested against unit tests. The code comes with verbose comments explaining line by line what is happening. Built with CrewAI.
+- [Stock Picker](./examples/crewai_stock_picker) - Using AI agents: trending company finder, financial researcher, stock picker and manager (CrewAI hierarchical process); and other constructs, like: structured outputs; custom (Pushover for push notifications) and SerpApi (Google Search API) tools the workflow picks best company for investement in a specified sector based on financial news from the internet. It also uses RAG vector and SQL stores to provide additional context to prompt and to ensure different companies are selected each time. Built with CrewAI (hierarchical process) and Gradio UI to plot with stock price data for the selected ticker. The data for the plot comes from Stooq.
+- [AI Software Development Team](https://github.com/ksatola/ai-soft-dev-team) - Given requirements, four agents playing common roles in a software development team: engineering lead, frontend developer, backend developer and test engineer build a complete and working solution (a web python-based application). The steps include application design, backend and frontent components development (a single Gradio UI Python module) and then create unit tests. The app is being executed by the team in a Docker container to confirm that it is working and tested against unit tests. The code comes with verbose comments explaining line by line what is happening. Built with CrewAI.
+- [AI Personal Sidekick](./examples/langgraph_sidekick) - AI assistant built with [LangGraph]https://www.langchain.com/langgraph), [LangSmith](https://www.langchain.com/langsmith) and [Gradio for building shareable web UIs](https://www.gradio.app/). The app uses the following tools: Wikipedia, SerpApi, PlayWrightBrowser, FileManagementToolkit, PythonREPL, Pushover and Google Calendar API. Sidekick uses multi-agent orchestration with ResearchAgent (performs web searches, runs Python code, manipulates Google Calendar, etc.) and Evaluator (ensures responses meet success criteria or asks clarifying questions).
 
 
 ## Resources
@@ -37,7 +37,7 @@ version 0.0.3
 - [Tensorflow Playground](https://playground.tensorflow.org/)
 - [Diagrams.net](https://app.diagrams.net/)
 - [UV Python package manager](https://github.com/astral-sh/uv), [docs](https://docs.astral.sh/uv/)
-- [gradio for building shareable web UIs](https://www.gradio.app/)
+- [Gradio for building shareable web UIs](https://www.gradio.app/)
 - [Pushover for simple notifications](https://pushover.net/)
 - [Hugging Face Spaces](https://huggingface.co/)
 - [SenGrid](https://sendgrid.com/en-us)
@@ -70,8 +70,10 @@ uv python list
 
 ### Agentic AI Frameworks
 - [OpenAI Agents SDK](https://github.com/openai/openai-agents-python)
-- [Crew AI]()
-- [LangGraph]()
+- [Crew AI](https://www.crewai.com/)
+- [LangChain](https://www.langchain.com/langchain) - Open, composable framework that provides a standard interface for every model, tool, and database.
+- [LangGraph]https://www.langchain.com/langgraph) - Design agents that reliably handle complex tasks. Consists of [LangGraph framework](https://www.langchain.com/langgraph), [LangGraph Studio](https://docs.langchain.com/langgraph-platform/langgraph-studio) and [LangGraph Platform](https://www.langchain.com/langgraph-platform).
+- [LangSmith](https://www.langchain.com/langsmith) - Unified observability & evals platform where teams can debug, test, and monitor AI app performance — whether building with LangChain or not
 - [Microsoft AutoGen]()
 - [Google Agent Development Kit (ADK)](https://google.github.io/adk-docs/)
 - [n8n (low code Agentic AI platform)](https://n8n.io/)
