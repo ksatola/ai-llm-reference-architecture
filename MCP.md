@@ -40,6 +40,14 @@ Tools, prompts and resources form the three core capabilities of the MCP framewo
 
 ![Source: none](/images/mcp_03.png)
 
+## MCP Concerns
+- MCP **added overhead of managing multiple tool servers**. Running and maintaining connections to these local servers can be cumbersome, particularly in production environments where uptime, security, and scalability are paramount. MCP's initial implementation was designed for local and desktop use, which raises questions about how well it translates to cloud-based architectures and multi-user scenarios. Developers have proposed making MCP more stateless and adaptable to distributed environments, but this remains an ongoing challenge.
+- **Tools usability**. Just because MCP expands an AI model’s toolset does not necessarily mean the model will use those tools effectively. Previous agent-based frameworks have demonstrated that AI models can struggle with tool selection and execution. MCP attempts to mitigate this by providing structured tool descriptions and specifications, but success still hinges on the quality of these descriptions and the AI’s ability to interpret them correctly.
+- **MCP’s maturity** is also a consideration. As a relatively new technology, it is subject to rapid changes and evolving standards. This can lead to breaking changes, requiring frequent updates to servers and clients. While the core concept of MCP appears stable, developers should anticipate and prepare for version upgrades and evolving best practices.
+- **Compatibility** is another limiting factor. Currently, MCP has first-class support within Anthropic’s ecosystem (e.g., Claude), but broader adoption remains uncertain. Other AI providers may not natively support MCP, requiring additional adapters or custom integrations. Until MCP gains wider acceptance across AI platforms, its utility will be somewhat constrained.
+- For simpler applications, **MCP may even be overkill**. If an AI model only needs to access one or two straightforward APIs, direct API calls might be a more efficient solution than implementing MCP. The learning curve associated with MCP’s messaging system and server setup means that its benefits need to be weighed against its complexity.
+- **Security and monitoring** also present ongoing challenges. Since MCP acts as an intermediary, it necessitates robust authentication and permission controls to prevent unauthorized access. Open-source initiatives like MCP Guardian have emerged to address these concerns by logging requests and enforcing policies, but securing MCP in enterprise environments remains a work in progress.
+
 ## References
 - [Introducing the Model Context Protocol by Anthropic](https://www.anthropic.com/news/model-context-protocol)
 - [Model Context Protocol Specification](https://modelcontextprotocol.io/overview)
