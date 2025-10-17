@@ -22,6 +22,12 @@ MCP follows a client-server architecture with the three main roles: Host, Client
 
 ![Source: https://www.dailydoseofds.com/](/images/mcp_02.png)
 
+### Communication Layer Protocols
+- **Stdio** spawns a process and communicates via standard input/output
+- **SSE** uses HTTPS with streaming
+
+![Source: https://www.dailydoseofds.com/](/images/mcp_04.png)
+
 ## MCP Core Capabilities
 
 Tools, prompts and resources form the three core capabilities of the MCP framework:
@@ -37,3 +43,4 @@ Tools, prompts and resources form the three core capabilities of the MCP framewo
 - [Model Context Protocol Gihub repository](https://github.com/modelcontextprotocol)
 - [Model Context Protocol servers reference implementation](https://github.com/modelcontextprotocol/servers)
 - [MCP - The Illustrated Guidebook from DailyDoseofDS.com](https://www.dailydoseofds.com/)
+- [TOP 11 Essential MCP Libraries](https://huggingface.co/blog/LLMhacker/top-11-essential-mcp-libraries)
