@@ -19,6 +19,8 @@ However, sometimes it is very hard to keep this distinction in practice. For exa
 
 The most successful implementations of agentic systems use simple, composable patterns rather than complex frameworks.
 
+An agent needs to observe and understand its environment (profile/knowledge), remember past interactions (memory), plan its moves (reasoning), take actions (execute tool calls or outputs), then reflect and learn.
+
 
 ## When (Not) To Use Agents
 When building applications with LLMs, `find the simplest solution possible`, and only increase complexity when needed. This might mean not building agentic systems at all. Agentic systems often trade latency and cost for better task performance, and you should consider when this tradeoff makes sense.
