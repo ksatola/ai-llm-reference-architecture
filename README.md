@@ -68,7 +68,7 @@ uv python list
 - [Ollama (run LLMs locally)](https://ollama.com/)
 
 
-### Agentic AI Frameworks
+### Agentic AI Orchestration Frameworks
 - [OpenAI Agents SDK](https://github.com/openai/openai-agents-python)
 - [Crew AI](https://www.crewai.com/)
 - [LangChain](https://www.langchain.com/langchain) - Open, composable framework that provides a standard interface for every model, tool, and database.
