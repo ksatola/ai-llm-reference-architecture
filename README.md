@@ -24,6 +24,14 @@ version 0.0.3
 - [Stock Picker](./examples/crewai_stock_picker) - Using AI agents: trending company finder, financial researcher, stock picker and manager (CrewAI hierarchical process); and other constructs, like: structured outputs; custom (Pushover for push notifications) and SerpApi (Google Search API) tools the workflow picks best company for investement in a specified sector based on financial news from the internet. It also uses RAG vector and SQL stores to provide additional context to prompt and to ensure different companies are selected each time. Built with CrewAI (hierarchical process) and Gradio UI to plot with stock price data for the selected ticker. The data for the plot comes from Stooq.
 - [AI Software Development Team](https://github.com/ksatola/ai-soft-dev-team) - Given requirements, four agents playing common roles in a software development team: engineering lead, frontend developer, backend developer and test engineer build a complete and working solution (a web python-based application). The steps include application design, backend and frontent components development (a single Gradio UI Python module) and then create unit tests. The app is being executed by the team in a Docker container to confirm that it is working and tested against unit tests. The code comes with verbose comments explaining line by line what is happening. Built with CrewAI.
 - [AI Personal Sidekick](./examples/langgraph_sidekick) - AI assistant built with [LangGraph]https://www.langchain.com/langgraph), [LangSmith](https://www.langchain.com/langsmith) and [Gradio for building shareable web UIs](https://www.gradio.app/). The app uses the following tools: Wikipedia, SerpApi, PlayWrightBrowser, FileManagementToolkit, PythonREPL, Pushover and Google Calendar API. Sidekick uses multi-agent orchestration with ResearchAgent (performs web searches, runs Python code, manipulates Google Calendar, etc.) and Evaluator (ensures responses meet success criteria or asks clarifying questions).
+- [Autonomous Traders]() - An experimental project - equity trading simulation - where AI agents (4 traiders and their researchers) can make their own decisions about finalizing financial markets and make trades. The application involves 5 MCP servers with tools and resources. Built with Python and OpenAI SDK.
+
+The holdings management logic was written by AI software development team (another project) and reused here. It allows....
+
+Trader agent
+Researcher agents make market research using headless search based on Brave? Fetch? transformed into a tool for trader agents to use
+
+market_server. py - to work with limitations of the free plan of Polygon services, we use a caching service for historical finacial data
 
 
 ## Resources
