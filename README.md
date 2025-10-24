@@ -53,6 +53,7 @@ version 0.0.3
 - [Hugging Face Spaces](https://huggingface.co/)
 - [SenGrid](https://sendgrid.com/en-us)
 - [Resend](https://resend.com/)
+- [Vercel](https://vercel.com/) - Developer tools and cloud infrastructure to build, scale, and secure a faster, more personalized web.
 
 ```
 uv init
