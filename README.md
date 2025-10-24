@@ -54,6 +54,7 @@ version 0.0.3
 - [SenGrid](https://sendgrid.com/en-us)
 - [Resend](https://resend.com/)
 - [Vercel](https://vercel.com/) - Developer tools and cloud infrastructure to build, scale, and secure a faster, more personalized web.
+- [Node.js](https://nodejs.org/) - Free, open-source, cross-platform JavaScript runtime environment that lets developers create servers, web apps, command line tools and scripts.
 
 ```
 uv init
